@@ -6,6 +6,7 @@ import morgan from "morgan";
 import mongoose from "mongoose";
 import userRoutes from "./routes/user";
 import profileRoutes from "./routes/profile";
+import postRoutes from "./routes/post";
 import passport from "passport";
 import { join } from "path";
 
@@ -20,6 +21,7 @@ app.use(express.static(join(__dirname, "./uploads")));
 //rutes
 app.use("/user", userRoutes);
 app.use("/profile", profileRoutes);
+app.use("/post", postRoutes);
 
 const PORT = process.env.APP_PORT;
 mongoose
